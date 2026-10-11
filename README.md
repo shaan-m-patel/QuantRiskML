@@ -46,5 +46,15 @@ QuantRiskML/
    pip install -r requirements.txt
    ```
 
+4. **Provide the EODHD API token at runtime**
+
+   `src/dataExploration/dataloader.ipynb` reads the token from the environment. Create or rotate a token in the EODHD dashboard, then export it in the shell that launches Jupyter:
+
+   ```bash
+   export EODHD_API_TOKEN="your-token"
+   ```
+
+   Do not paste the token into a notebook, source file, or commit. `.env` is gitignored for local use; load it into the environment before starting Jupyter. The notebook does not read `.env` on its own.
+
 ## Usage
 Check the `notebooks/` directory for example usage of the modules.
